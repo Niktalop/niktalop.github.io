@@ -7,7 +7,7 @@
 		src: url('aurora-24.ttf'); 
 	}
 	body {
-		background-image: url("bg.png");
+		background-image: url("bg.gif");
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
 		font-family: terminal; 
@@ -22,32 +22,17 @@
 		margin; 20px;
 	}
 	.winbody {
-		background-color: black;
+		background-color: #171716;
 		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
-		color: #4af626;
+		color: #93ff61;
 		font-size: 14px;
-	}
-	.winbodyalt {
-		background-color: white;
-		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
-		color: #2650f6;
-		font-size: 14px;
-		text-align: center;
 	}
 	.winhead {
 		display: flex;
 		justify-content: space-between;
 		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
-		background-color: #4af626;
-		color: black;
-		cursor: grab;
-	}
-	.winheadalt {
-		display: flex;
-		justify-content: space-between;
-		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
-		background-color: #2650f6;
-		color: white;
+		background-color: #93ff61;
+		color: #171716;
 		cursor: grab;
 	}
 	.content {
@@ -55,23 +40,6 @@
 		margin: 10px;
 		position: relative;
 	}
-	img.ic {
-		display: inline-block;
-		vertical-align: middle;
-		max-width: 100%;
-		max-heigth: 100%;
-		width: auto;
-		heigt: auto;
-		margin: 10px;
-		filter: brightness(100%);
-		transition: transform .2s;
-	}
-	
-	img.ic:hover {
-		filter: brightness(125%);
-		transform: scale(1.5);
-	}
-	
 	img {
 		max-width: 70%;
 		max-heigth: 70%;
@@ -86,12 +54,12 @@
 	
 	a{
 		font-size: 20px;
-		color: #2650f6;
+		color: #93ff61;
 		text-decoration: none;
 	}
 	
 	a:hover {
-		color: #3866f8;
+		color: #a8ff80;
 	}
 	.bar{
 		display: flex;
@@ -99,7 +67,7 @@
 		position: fixed;
 		bottom: 0;
 		width: 100%;
-		background-color: #2650f6;
+		background-color: #4af626;
 		color: white;
 		font-size: 22px;
 		flex-basis: auto;
@@ -110,8 +78,8 @@
 
 <body>
 <div class="win"> 
-<div class="winhead"><div class="content">Welcome!</div> <div class="content">× | ⿻ | –</div></div>
-<div class="winbody"><div class="content">>Booting OS... </br> >Loading graphic drivers... </br>
+<div class="winhead"><div class="content">Welcome</div> <div class="content">× | ⿻ | –</div></div>
+<div class="winbody"><div class="content">>Booting OS... </br>>Connecting to [user]...</br> >Loading graphic drivers... </br>
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠤⠖⠒⠉⠉⠁⠀⠀⠀⠀⠀⠉⠉⠁⠒⠢⠄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠴⠊⠁⠀⢀⣠⠤⠒⠒⠋⠉⠉⠉⠉⠉⠑⠒⠒⠤⣀⡀⠀⠉⠒⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -136,21 +104,15 @@
 ⠀⠀⠀⠀⠀⠀⣀⡤⠞⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠒⠤⢀⠀
 ⠀⠀⠀⠀⠀⢰⣃⠐⠦⠤⠤⠄⠀⠠⠤⠤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣵
 ⠀⠀⠀⠀⠀⠀⠛⠿⠶⠦⠶⠶⠶⠶⢶⣂⡤⣤⡉⠉⠀⠐⠒⠒⠒⠒⠒⠒⠒⠒⠀⠀⠉⠉⢉⣀⠀⡉⠉⠉⠀⠐⠒⠤⠤⠀⠀⠄⢀⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⠛⠛⠛⠳⠶⠶⠶⠶⠶⠶⠿⠚⠚⠛⠓⠀⠀⠀⠀⠈⠛⠛⠓⠶⣶⣶⣤⣤⣶⡾⠋ 
-</br></br>
->You've stubbled upon Fredelik's website!
-</br>...</br>
->This place is still under construction
-</br>...</br>
->Thanks for stopping by!
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⠛⠛⠛⠳⠶⠶⠶⠶⠶⠶⠿⠚⠚⠛⠓⠀⠀⠀⠀⠈⠛⠛⠓⠶⣶⣶⣤⣤⣶⡾⠋  
 </br>
 </div></div>
 </div>
 
 <div class="win"> 
-<div class="winheadalt"><div class="content"><img src="hey.png" class="ic">About</div> <div class="content">× | ⿻ | –</div></div>
-<div class="winbodyalt"><div class="content">I started producing music around 2024 with LMMS before switching to FL Studio.</br>
-Its hard to tell what genre i produce because i don't really want to stick to a single one, but my biggest source of inspiration are psytrance, acid techno, jungle and breakcore.
+<div class="winhead"><div class="content">About</div> <div class="content">× | ⿻ | –</div></div>
+<div class="winbody"><div class="content">Hi! I'm a begginer techno produced from France, i started making music around 2024 with LMMS before switching to FL Studio.</br>
+I tend to not stick to a specific genre and experiment stuff instead, but my biggest source of inspiration are psytrance, acid techno, jungle and breakcore.
 </br>
 </br>
 <audio controls>
@@ -167,32 +129,31 @@ Its hard to tell what genre i produce because i don't really want to stick to a 
 </audio>
 </br>
 </br>
-Oh also i usually make my own covers and stuff, because "✨graphic design is my passion✨"
+I also make my own cover arts and stuff, because "✨graphic design is my passion✨"
 </br>
 </br>
  <div class="scroll-container">
-  <img src="1.jpg" alt="Cinque Terre">
+  <img src="4.png" alt="Cinque Terre">
   <img src="2.png" alt="Forest">
   <img src="3.jpg" alt="Northern Lights">
-  <img src="4.jpg" alt="Mountains">
+  <img src="1.jpg" alt="Mountains">
 </div> </div></div>
 </div>
 
 <div class="win"> 
-<div class="winheadalt"><div class="content"><img src="link.png" class="ic">Links</div> <div class="content">× | ⿻ | –</div></div>
-<div class="winbodyalt"><div class="content">You can find my stuff on Youtube as well as most streaming platforms, i also post on Insta sometimes.
-</br> <a href="https://www.instagram.com/fredelik_/" target="_blank"><img src="insta.png" class="ic">Instagram</a>
-</br> <a href="https://open.spotify.com/intl-fr/artist/1Is1taXTpAFHq1OOdomNOm" target="_blank"><img src="spot.png" class="ic">Spotify</a>
-</br> <a href="https://www.youtube.com/@fredelic" target="_blank"><img src="ytb.png" class="ic">Youtube</a>
-</br> <a href="https://soundcloud.com/fredelik" target="_blank"><img src="cloud.png" class="ic">Soundcloud</a>
-</br> <a href="https://www.deezer.com/fr/artist/332217511" target="_blank"><img src="deez.png" class="ic">Deezer</a></div></div>
+<div class="winhead"><div class="content">Latest release</div> <div class="content">× | ⿻ | –</div></div>
+<div class="winbody"><div class="content"><iframe width="560" height="315" src="https://www.youtube.com/embed/_U0Pg4vsf1g?si=kk_7x4dRix8Hn3Lh" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
 </div>
 
 <div class="win"> 
-<div class="winheadalt"><div class="content"><img src="vlc.png" class="ic">Latest release</div> <div class="content">× | ⿻ | –</div></div>
-<div class="winbodyalt"><div class="content"><iframe width="560" height="315" src="https://www.youtube.com/embed/_U0Pg4vsf1g?si=kk_7x4dRix8Hn3Lh" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+<div class="winhead"><div class="content">Links</div> <div class="content">× | ⿻ | –</div></div>
+<div class="winbody"><div class="content">You can find my stuff on Youtube as well as most streaming platforms, i also post on Insta (sometimes).
+</br> <a href="https://www.instagram.com/n1ktalop/" target="_blank">>Instagram</a>
+</br> <a href="https://open.spotify.com/intl-fr/artist/3V8mZ11uZ7YctjC0JABG28" target="_blank">>Spotify</a>
+</br> <a href="https://www.youtube.com/@n1ktalop" target="_blank">>Youtube</a>
+</br> <a href="https://soundcloud.com/n1ktalop" target="_blank">>Soundcloud</a>
+</br> <a href="https://www.deezer.com/fr/artist/332217511" target="_blank">>Deezer</a></div></div>
 </div>
 
-<div class="bar"><div style="background-color:#4af626;"><img src="laun.png" class="ic"></div><div style="background-color:#3670ff;margin-left:auto;">16:20</div></div>
 </body>
 </html> 
