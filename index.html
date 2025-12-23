@@ -1,19 +1,63 @@
 <!DOCTYPE html>
-<html lang='fr'>
+<html lang='en'>
 <head>
+<meta charset="utf-8" />
 <style type="text/css" media="screen">
 	@font-face {
 		font-family: terminal;
 		src: url('aurora-24.ttf'); 
 	}
 	body {
-		background-image: url("bg.gif");
-		background-size: 100% 100%;
-		background-repeat: no-repeat;
-		font-family: terminal; 
+		font-family: 'IBM Plex Mono', monospace;
+		margin: 0;
+		font-size: 17px;
+		background-color: #222222;
+	}
+	
+	.wrapper {
+		position: relative;
+		height: 100%;
+		width: 100%;
+	}
+	.main {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0;
+	}
+	
+	.ascii {
+	position: absolute;
+	top: 0;
+	left: 0;
+	  width: 100%;
+	  heighth: 100%;
+	  flex-shrink: 0;
+	  flex-grow: 0;
+	  overflow: hidden;
+	  background-image: url('imm.png');
+	  background-size: cover;
+	  background-position: center;
+	  background-clip: text;
+	  -webkit-background-clip: text;
+	  color: transparent;
+	  font-size: 11px;
+	}
+	#ascii-container {
+		color: #555555;
+		line-height: 10px;
+		white-space: pre;
+		letter-spacing: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		font-size: 11px;
 	}
 	nav{
 		display: flex;
@@ -28,19 +72,18 @@
 		background-color: rgb(0,0,0,0);
 		max-width: 46%;
 		padding: 2%;
-		margin; 2%;
+		margin: 2%;
 	}
 	.winbody {
 		background-color: #171716;
 		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
-		color: #93ff61;
-		font-size: 15px;
+		color: #715FFA;
 	}
 	.winhead {
 		display: flex;
 		justify-content: space-between;
 		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
-		background-color: #93ff61;
+		background-color: #715FFA;
 		color: #171716;
 		cursor: grab;
 	}
@@ -48,11 +91,6 @@
 		padding: 10px;
 		margin: 10px;
 		position: relative;
-	}
-	img {
-		max-width: 70%;
-		max-heigth: 70%;
-		margin: 10px;
 	}
 	
 	div.scroll-container {
@@ -62,8 +100,7 @@
 	}
 	
 	a{
-		font-size: 15px;
-		color: #96ff64;
+		color: #8F91FF;
 		text-decoration: none;
 	}
 	
@@ -73,47 +110,66 @@
 </style>
 </head>
 <body>
+
+<div class="wrapper">
+<div class="ascii">
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.0
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+0o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .o0.O Oo.00o.O o.0O O0.o .
+</div>
+
+<div class="main">
 <nav>
-		<a href="indexen.html">🇬🇧 Anglais 🇬🇧</a><a href="index.html">🇫🇷 Francais 🇫🇷</a>
+	<a href="indexen.html">🇬🇧 EN 🇬🇧</a><a href="index.html">🇫🇷 FR 🇫🇷</a>
 </nav>
-<div class="fr"> 
+
+<div class="en"> 
 <div class="winhead"><div class="content">Bienvenue</div> <div class="content">× | ⿻ | –</div></div>
-<div class="winbody"><div class="content">>Chargement du systeme d'opération... </br>
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠤⠖⠒⠉⠉⠁⠀⠀⠀⠀⠀⠉⠉⠁⠒⠢⠄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠴⠊⠁⠀⢀⣠⠤⠒⠒⠋⠉⠉⠉⠉⠉⠑⠒⠒⠤⣀⡀⠀⠉⠒⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠊⠀⢀⡠⠖⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠢⣄⠀⠈⠷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⢀⡴⠉⠀⣠⠔⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠢⡀⠁⠑⢤⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⡰⠋⠀⣠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠢⡀⠘⠳⡄⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⢀⡜⠁⠀⡴⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣄⠀⠘⣆⠀⠀⠀⠀
-⠀⠀⠀⠀⡞⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣟⡽⣿⣿⡧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢆⠀⠈⣆⠀⠀⠀
-⠀⠀⠀⡼⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡿⣿⡽⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣆⠀⢿⡄⠀⠀
-⠀⠀⢰⠇⠀⢸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣷⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡄⠘⣷⠀⠀
-⠀⠀⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣄⡄⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⢹⡇⠀
-⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⡿⢿⣿⢿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡇⠀
-⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⣟⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀
-⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣟⣯⣷⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀
-⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⢿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡇⠀
-⠀⠀⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⡀⠀
-⣤⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢙⠿⣿⣿⣿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠤⠤⠤⠚⣉⡆
-⣇⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠒⠭⣛⠻⠿⢿⣿⣶⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠷⣶⣶⠶⠽⠟⠁
-⠙⣧⣄⡑⠂⠤⠤⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠙⠛⠻⢶⣦⣤⡀⠀⠀⠀⢀⣀⠀⠉⠳⡄⠀⠀
-⠀⠈⠙⠻⠷⠶⣶⣦⣌⣳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣤⡤⠤⠤⠤⠶⠶⠿⠛⠃⠀⠀⢰⣧⣤⣤⣶⠿⠃⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠿⠶⠶⠶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⣄⡀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⣀⡤⠞⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠒⠤⢀⠀
-⠀⠀⠀⠀⠀⢰⣃⠐⠦⠤⠤⠄⠀⠠⠤⠤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣵
-⠀⠀⠀⠀⠀⠀⠛⠿⠶⠦⠶⠶⠶⠶⢶⣂⡤⣤⡉⠉⠀⠐⠒⠒⠒⠒⠒⠒⠒⠒⠀⠀⠉⠉⢉⣀⠀⡉⠉⠉⠀⠐⠒⠤⠤⠀⠀⠄⢀⣿
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⠛⠛⠛⠳⠶⠶⠶⠶⠶⠶⠿⠚⠚⠛⠓⠀⠀⠀⠀⠈⠛⠛⠓⠶⣶⣶⣤⣤⣶⡾⠋  
+<div class="winbody"><div class="content">>Chargement de l'OS... </br>
 </br>
 </div></div>
 </div>
 
-
-<div class="fr"> 
+<div class="en"> 
 <div class="winhead"><div class="content">A propos</div> <div class="content">× | ⿻ | –</div></div>
-<div class="winbody"><div class="content">Salutations! Je fais de la musique depuis 2024/2025, je compose principalement de la techno en y mélant plusieurs genres.</br>
+<div class="winbody"><div class="content">Salutations! Je fais de la musique depuis 2024, principalement de la techno melengeant plusieur sous-genres.
 </br>
-Vous pouvez trouver mes sons sur Youtube et la plus part des plateformes de streaming, je met des news sur Insta aussi (des fois, genre une fois tout les deux siecles).
+Vous pouvez trouver mes sons sur Youtube ainsi que sur la plus part des platformes, je donne des nouvelles sur Insta des fois (genre, une fois par millenaire)
 </br><ul><li><a href="https://www.instagram.com/n1ktalop/" target="_blank">Instagram</a></li>
 <li><a href="https://www.youtube.com/@n1ktalop" target="_blank">Youtube</a></li>
 <li><a href="https://soundcloud.com/n1ktalop" target="_blank">Soundcloud</a></li>
@@ -123,10 +179,17 @@ Vous pouvez trouver mes sons sur Youtube et la plus part des plateformes de stre
 </div></div>
 </div>
 
-<div class="fr"> 
+<div class="en"> 
 <div class="winhead"><div class="content">Derniere sortie</div> <div class="content">× | ⿻ | –</div></div>
 <div class="winbody"><div class="content"><iframe width="560" height="315" src="https://youtu.be/IKoWuQGECU0?si=a-Dr1BZ1S2qJq89l" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
 </div>
+
+</div>
+</div>
+
+<div id="ascii-container">
+</div>
+<script src="animation.js"></script>
 
 </body>
 </html> 
