@@ -14,6 +14,16 @@
 		background-color: #222222;
 	}
 	
+	#myVideo {
+	  position: fixed;
+	  right: 0;
+	  bottom: 0;
+	  min-width: 100%;
+	  min-height: 100%;
+	  max-width: 150%;
+	  max-height: 150%;
+	}
+	
 	.wrapper {
 		position: relative;
 		height: 100%;
@@ -48,11 +58,12 @@
 		justify-content: space-between;
 		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
 		background-color: #171716;
-		cursor: grab;		
+		cursor: grab;	
+		opacity: 0.95;	
 	}
 	.fr, .en {
 		background-color: rgb(0,0,0,0);
-		max-width: 46%;
+		max-width: 48%;
 		padding: 2%;
 		margin: 2%;
 	}
@@ -60,6 +71,7 @@
 		background-color: #171716;
 		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
 		color: #715FFA;
+		opacity: 0.95;	
 	}
 	.winhead {
 		display: flex;
@@ -68,6 +80,7 @@
 		background-color: #715FFA;
 		color: #171716;
 		cursor: grab;
+		opacity: 0.95;	
 	}
 	.content {
 		padding: 10px;
@@ -93,10 +106,13 @@
 </head>
 <body>
 
+<video autoplay muted loop id="myVideo">
+  <source src="video.mp4" type="video/mp4">
+</video>
+
 <div class="wrapper">
-<div class="main">
 <nav>
-	<a href="indexen.html">🇬🇧 EN 🇬🇧</a><a href="index.html">🇫🇷 FR 🇫🇷</a>
+	<a href="indexen.html">EN 🇬🇧</a><a href="index.html">🇫🇷 FR</a>
 </nav>
 
 <div class="en"> 
@@ -118,9 +134,9 @@
 
 <div class="en"> 
 <div class="winhead"><div class="content">About</div> <div class="content">× | ⿻ | –</div></div>
-<div class="winbody"><div class="content">Hi! I've been making music since 2024/2025, i mostly produce a blend of different techno sub-genres.
+<div class="winbody"><div class="content">Hi! I've been making music since 2024/2025, i mostly produce a blend of techno sub-genres.
 </br>
-You can find my stuff on Youtube as well as most music platforms, i also post news on Insta sometimes (like, once every thousand years).
+You can find my stuff on Youtube as well as the most well-known platforms, i also post news on Insta sometimes (like, once every thousand years).
 </br><ul><li><a href="https://www.instagram.com/n1ktalop/" target="_blank">Instagram</a></li>
 <li><a href="https://www.youtube.com/@n1ktalop" target="_blank">Youtube</a></li>
 <li><a href="https://soundcloud.com/n1ktalop" target="_blank">Soundcloud</a></li>
@@ -135,7 +151,6 @@ You can find my stuff on Youtube as well as most music platforms, i also post ne
 <div class="winbody"><div class="content"><iframe width="560" height="315" src="https://youtu.be/IKoWuQGECU0?si=a-Dr1BZ1S2qJq89l" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
 </div>
 
-</div>
 </div>
 
 <div id="ascii-container">

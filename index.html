@@ -14,6 +14,16 @@
 		background-color: #222222;
 	}
 	
+	#myVideo {
+	  position: fixed;
+	  left: 0;
+	  top: 0;
+	  min-width: 100%;
+	  min-height: 100%;
+	  max-width: 150%;
+	  max-height: 150%;
+	}
+	
 	.wrapper {
 		position: relative;
 		height: 100%;
@@ -49,11 +59,12 @@
 		justify-content: space-between;
 		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
 		background-color: #171716;
-		cursor: grab;		
+		cursor: grab;	
+		opacity: 0.95;		
 	}
 	.fr, .en {
 		background-color: rgb(0,0,0,0);
-		max-width: 46%;
+		max-width: 49%;
 		padding: 2%;
 		margin: 2%;
 	}
@@ -61,6 +72,7 @@
 		background-color: #171716;
 		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
 		color: #715FFA;
+		opacity: 0.95;
 	}
 	.winhead {
 		display: flex;
@@ -69,17 +81,12 @@
 		background-color: #715FFA;
 		color: #171716;
 		cursor: grab;
+		opacity: 0.95;
 	}
 	.content {
 		padding: 10px;
 		margin: 10px;
 		position: relative;
-	}
-	
-	div.scroll-container {
-		background-color: rgb(0,0,0,0.1);
-		overflow: auto;
-		white-space: nowrap;
 	}
 	
 	a{
@@ -93,11 +100,14 @@
 </style>
 </head>
 <body>
-<div class="wrapper">
 
-<div class="main">
+<video autoplay muted loop id="myVideo">
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<div class="wrapper">
 <nav>
-	<a href="indexen.html">🇬🇧 EN 🇬🇧</a><a href="index.html">🇫🇷 FR 🇫🇷</a>
+	<a href="indexen.html">EN 🇬🇧</a><a href="index.html">🇫🇷 FR</a>
 </nav>
 
 <div class="en"> 
@@ -119,9 +129,9 @@
 
 <div class="en"> 
 <div class="winhead"><div class="content">A propos</div> <div class="content">× | ⿻ | –</div></div>
-<div class="winbody"><div class="content">Salutations! Je fais de la musique depuis 2024, principalement de la techno melengeant plusieur sous-genres.
+<div class="winbody"><div class="content">Salutations! Je fais de la musique depuis 2024, principalement de la techno mélée a plusieurs genres.
 </br>
-Vous pouvez trouver mes sons sur Youtube ainsi que sur la plus part des platformes, je donne des nouvelles sur Insta des fois (genre, une fois par millenaire)
+Vous pouvez trouver mes sons sur Youtube ainsi que sur les platformes les plus répendues, et aussi je donne des nouvelles sur Insta des fois (genre, une fois par millenaire)
 </br><ul><li><a href="https://www.instagram.com/n1ktalop/" target="_blank">Instagram</a></li>
 <li><a href="https://www.youtube.com/@n1ktalop" target="_blank">Youtube</a></li>
 <li><a href="https://soundcloud.com/n1ktalop" target="_blank">Soundcloud</a></li>
@@ -132,10 +142,8 @@ Vous pouvez trouver mes sons sur Youtube ainsi que sur la plus part des platform
 </div>
 
 <div class="en"> 
-<div class="winhead"><div class="content">Derniere sortie</div> <div class="content">× | ⿻ | –</div></div>
+<div class="winhead"><div class="content">Dernière sortie</div> <div class="content">× | ⿻ | –</div></div>
 <div class="winbody"><div class="content"><iframe width="560" height="315" src="https://youtu.be/IKoWuQGECU0?si=a-Dr1BZ1S2qJq89l" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
-</div>
-
 </div>
 </div>
 
