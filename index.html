@@ -5,12 +5,12 @@
 <style type="text/css" media="screen">
 	@font-face {
 		font-family: terminal;
-		src: url('aurora-24.ttf'); 
+		src: url('win.ttf'); 
 	}
 	body {
-		font-family: 'IBM Plex Mono', monospace;
+		font-family: terminal, monospace;
 		margin: 0;
-		font-size: 17px;
+		font-size: 19px;
 		background-color: #222222;
 	}
 	
@@ -38,7 +38,6 @@
 		display: flex;
 		flex-wrap: wrap;
 	}
-
 	#ascii-container {
 		color: #555555;
 		line-height: 10px;
@@ -53,26 +52,29 @@
 		font-size: 11px;
 	}
 	nav{
+		position: fixed;
 		display: flex;
+		right: 0;
 		flex-wrap: nowrap;
-		width: 100%;
+		width: 10%;
 		justify-content: space-between;
 		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
 		background-color: #171716;
+		color: #8F91FF;
 		cursor: grab;	
-		opacity: 0.95;		
+		opacity: 0.95;	
 	}
 	.fr, .en {
 		background-color: rgb(0,0,0,0);
-		max-width: 47%;
-		padding: 2%;
-		margin: 2%;
+		max-width: 48%;
+		padding: 1% 1% 1% 1%;
+		margin: 1% 6% 0% 6%;
 	}
 	.winbody {
 		background-color: #171716;
 		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
 		color: #715FFA;
-		opacity: 0.95;
+		opacity: 0.95;	
 	}
 	.winhead {
 		display: flex;
@@ -81,12 +83,18 @@
 		background-color: #715FFA;
 		color: #171716;
 		cursor: grab;
-		opacity: 0.95;
+		opacity: 0.95;	
 	}
 	.content {
 		padding: 10px;
 		margin: 10px;
 		position: relative;
+	}
+	
+	div.scroll-container {
+		background-color: rgb(0,0,0,0.1);
+		overflow: auto;
+		white-space: nowrap;
 	}
 	
 	a{
@@ -108,7 +116,7 @@
 <div class="wrapper">
 <div class="main">
 <nav>
-	<a href="indexen.html">EN 🇬🇧</a><a href="index.html">🇫🇷 FR</a>
+	<a href="indexen.html">🇬🇧</a>Langue<a href="index.html">🇫🇷</a>
 </nav>
 
 <div class="en"> 
