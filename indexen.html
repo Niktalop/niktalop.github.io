@@ -2,6 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset="utf-8" />
+<script src="https://kit.fontawesome.com/a16257f01f.js" crossorigin="anonymous"></script>
 <style type="text/css" media="screen">
 	@font-face {
 		font-family: terminal;
@@ -10,18 +11,8 @@
 	body {
 		font-family: terminal, monospace;
 		margin: 0;
-		font-size: 19px;
-		background-color: #222222;
-	}
-	
-	#myVideo {
-	  position: fixed;
-	  left: 0;
-	  top: 0;
-	  min-width: 100%;
-	  min-height: 100%;
-	  max-width: 150%;
-	  max-height: 150%;
+		font-size: 22px;
+		background-image: url('banner.jpg');
 	}
 	
 	.wrapper {
@@ -66,7 +57,7 @@
 	}
 	.fr, .en {
 		background-color: rgb(0,0,0,0);
-		max-width: 48%;
+		width: 100%;
 		padding: 1% 1% 1% 1%;
 		margin: 1% 6% 0% 6%;
 	}
@@ -74,29 +65,23 @@
 		background-color: #171716;
 		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
 		color: #715FFA;
-		opacity: 0.95;	
+		opacity: 0.95;
+		padding: 10px;
+		margin: 10px;
+		text-align: center;
 	}
 	.winhead {
 		display: flex;
-		justify-content: space-between;
+		text-align: justify;
 		box-shadow: 4px 4px rgb(0, 0, 0, 0.5);
 		background-color: #715FFA;
 		color: #171716;
 		cursor: grab;
 		opacity: 0.95;	
-	}
-	.content {
 		padding: 10px;
 		margin: 10px;
-		position: relative;
 	}
-	
-	div.scroll-container {
-		background-color: rgb(0,0,0,0.1);
-		overflow: auto;
-		white-space: nowrap;
-	}
-	
+
 	a{
 		color: #8F91FF;
 		text-decoration: none;
@@ -109,47 +94,28 @@
 </head>
 <body>
 
-<video autoplay muted loop id="myVideo">
-  <source src="video.mp4" type="video/mp4">
-</video>
-
 <div class="wrapper">
 <div class="main">
 
 <div class="en"> 
-<div class="winhead"><div class="content">Welcome</div> <div class="content">× | ⿻ | –</div></div>
-<div class="winbody"><div class="content">>Booting OS... </br>
-</br>.
-</br>.
-</br>.
-</br>.
-</br>.
-</br>.
-</br>.
-</br>.
-</br>.
-</br>.
-</br>.
-</div></div>
-</div>
-
-<div class="en"> 
-<div class="winhead"><div class="content">About</div> <div class="content">× | ⿻ | –</div></div>
-<div class="winbody"><div class="content">Hi! I've been making music since 2024/2025, i mostly produce a blend of techno sub-genres.
+<div class="winhead">About  × | ⿻ | –</div>
+<div class="winbody">Greetings!
+I've been making techno/electro for a year, my style is a mix of lots of genres with a decent dose of drugs sprinkled on top (i guess).
 </br>
-You can find my stuff on Youtube as well as the most well-known platforms, i also post news on Insta sometimes (like, once every thousand years).
-</br><ul><li><a href="https://www.instagram.com/n1ktalop/" target="_blank">Instagram</a></li>
-<li><a href="https://www.youtube.com/@n1ktalop" target="_blank">Youtube</a></li>
-<li><a href="https://soundcloud.com/n1ktalop" target="_blank">Soundcloud</a></li>
-<li><a href="https://niktalop.bandcamp.com/" target="_blank">Bandcamp</a></li>
-<li><a href="https://open.spotify.com/intl-fr/artist/3V8mZ11uZ7YctjC0JABG28" target="_blank">Spotify</a></li>
-<li><a href="https://www.deezer.com/fr/artist/360491362" target="_blank">Deezer</a></li></ul>
-</div></div>
+<a href="https://www.instagram.com/n1ktalop/" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
+<a href="https://open.spotify.com/intl-fr/artist/3V8mZ11uZ7YctjC0JABG28" target="_blank"<i class="fa-brands fa-spotify"></i>Spotify</a>
+<a href="https://www.deezer.com/fr/artist/360491362" target="_blank"><i class="fa-brands fa-deezer"></i>Deezer</a>
+<a href="https://www.youtube.com/@n1ktalop" target="_blank"><i class="fa-brands fa-youtube"></i>Youtube</a>
+<a href="https://niktalop.bandcamp.com/" target="_blank"><i class="fa-brands fa-bandcamp"></i>Bandcamp</a>
+<a href="https://soundcloud.com/n1ktalop" target="_blank"><i class="fa-brands fa-soundcloud"></i>Soundcloud</a>
+</div>
 </div>
 
 <div class="en"> 
-<div class="winhead"><div class="content">Latest release</div> <div class="content">× | ⿻ | –</div></div>
-<div class="winbody"><div class="content"><iframe width="560" height="315" src="https://www.youtube.com/embed/IKoWuQGECU0?si=AVx-Yb-luSediuun" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+<div class="winhead">Latest release  × | ⿻ | –</div>
+<div class="winbody">
+I've just released my first EP :D </br></br>
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/5zKSpTU5sF6NMDmIiSbVve?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
 </div>
 
 <nav>
@@ -162,6 +128,5 @@ You can find my stuff on Youtube as well as the most well-known platforms, i als
 <div id="ascii-container">
 </div>
 <script src="animation.js"></script>
-
 </body>
 </html> 
